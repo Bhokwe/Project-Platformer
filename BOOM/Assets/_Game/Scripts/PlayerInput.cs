@@ -11,18 +11,19 @@ public class PlayerInput : MonoBehaviour
     private Rigidbody2D _rb;
     private PlayerWeapon _playerWeapon;
 
-    // Grounded check
-    //bool isGrounded;
+    
+    public Vector2 boxSize;
+    public float castDistance;
+    public LayerMask groundLayer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         //playerWeapon script reference
         _playerWeapon = GetComponent<PlayerWeapon>();
         //Rigidbody2D reference
         _rb = GetComponent<Rigidbody2D>();
-        //isGrounded checker
-        //bool isGrounded = Physics2D.OverlapCircle(new Vector2(0, -1), 0.1f, LayerMask.GetMask("Ground"));
+        
 
     }
 
@@ -42,8 +43,9 @@ public class PlayerInput : MonoBehaviour
 
         //axis input received from keyboard (horizontal)        
         _rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, _rb.linearVelocity.y);
+
         //axis input received from keyboard (vertical) (jumping)
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) /*&& isGrounded is true*/) 
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && IsGrounded()) 
         {
             _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, moveSpeed);
         }
@@ -53,9 +55,28 @@ public class PlayerInput : MonoBehaviour
     void HandleShooting()
     {
         //when the space bar is pressed down and the playerWeapon script is attached
-                if (Input.GetKeyDown(KeyCode.Space) && _playerWeapon != null)
+        if (Input.GetKeyDown(KeyCode.Space) && _playerWeapon != null)
         {
             _playerWeapon.Shoot();
         }
+    }
+
+    public bool IsGrounded()
+    {
+        if (Physics2D.BoxCast(transform.position, boxSize, 0, Vector2.down, castDistance, groundLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(transform.position + Vector3.down * castDistance, boxSize);
     }
 }
