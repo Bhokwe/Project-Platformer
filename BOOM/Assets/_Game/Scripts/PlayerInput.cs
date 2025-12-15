@@ -44,6 +44,17 @@ public class PlayerInput : MonoBehaviour
         //axis input received from keyboard (horizontal)        
         _rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, _rb.linearVelocity.y);
 
+
+        //checking the direction of the playere's movement to flip the sprite
+        if (horizontalInput > 0) 
+        { 
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (horizontalInput < 0) 
+        { 
+            transform.localScale = new Vector3(-1, 1, 1);
+
+        }
         //axis input received from keyboard (vertical) (jumping)
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && IsGrounded()) 
         {
