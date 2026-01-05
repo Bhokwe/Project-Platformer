@@ -28,5 +28,6 @@ public class PlayerWeapon : MonoBehaviour
         }
 
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        
     }
 }
