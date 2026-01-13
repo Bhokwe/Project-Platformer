@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     public float moveSpeed = 5f;
 
     //References to the player's components
-    private Rigidbody2D _rb;
+    private Rigidbody2D rb;
     private PlayerWeapon _playerWeapon;
 
     
@@ -22,7 +22,7 @@ public class PlayerInput : MonoBehaviour
         //playerWeapon script reference
         _playerWeapon = GetComponent<PlayerWeapon>();
         //Rigidbody2D reference
-        _rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         
 
     }
@@ -42,7 +42,7 @@ public class PlayerInput : MonoBehaviour
         
 
         //axis input received from keyboard (horizontal)        
-        _rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, _rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
 
         //checking the direction of the playere's movement to flip the sprite
@@ -62,7 +62,7 @@ public class PlayerInput : MonoBehaviour
         //axis input received from keyboard (vertical) (jumping)
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && IsGrounded()) 
         {
-            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, moveSpeed);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, moveSpeed);
         }
 
 
