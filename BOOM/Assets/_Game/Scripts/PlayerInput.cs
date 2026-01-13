@@ -48,13 +48,15 @@ public class PlayerInput : MonoBehaviour
         //checking the direction of the playere's movement to flip the sprite
         if (horizontalInput > 0) 
         { 
-            transform.localScale = new Vector3(1, 1, 1);
             
+            FaceDirection(true);//face right
+
         }
         else if (horizontalInput < 0) 
         { 
-            transform.localScale = new Vector3(-1, 1, 1);
             
+            FaceDirection(false); //face left
+
 
         }
         //axis input received from keyboard (vertical) (jumping)
@@ -91,5 +93,16 @@ public class PlayerInput : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(transform.position + Vector3.down * castDistance, boxSize);
+    }
+    void FaceDirection(bool isFacingRight)
+    {
+        if (isFacingRight)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
     }
 }

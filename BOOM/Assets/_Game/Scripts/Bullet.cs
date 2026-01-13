@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
         else if (bullet.transform.localScale.x < 0) 
         {
             //shoot left
-            _rb.linearVelocity = -transform.right * speed;
+            _rb.linearVelocity = transform.right * speed;
         }
     }
 
