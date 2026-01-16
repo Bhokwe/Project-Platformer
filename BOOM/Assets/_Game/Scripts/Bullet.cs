@@ -6,7 +6,8 @@ public class Bullet : MonoBehaviour
 
     [Header("Bullet Speed Settings")]
     [SerializeField] float speed = 20f;
-    [SerializeField] private int damage = 10;
+    public int damage;
+    Enemy enemy;
 
     private Rigidbody2D rb;
     
@@ -28,27 +29,26 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        //Enemy enemy = collision.GetComponent<Enemy>();
 
-        if (enemy != null)
+        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
         {
-            enemy.TakeDamage(damage);
-        }
+            enemy.TakeDamage(50);
+            //Debug.Log("Bullet collided with " + collision.name);
+            //Destroy the bullet on collision with any object
+            Destroy(gameObject);
 
-        Debug.Log("Bullet collided with " + hitInfo.name);
-        //Destroy the bullet on collision with any object
-        Destroy(gameObject);
+
+        }
+       
+
+
     }
 
    
 
 }
+

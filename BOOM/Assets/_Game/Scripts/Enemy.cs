@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth; //the health you start with is the max HP
 
 
+
     }
 
 

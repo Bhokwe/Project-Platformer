@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     private float smoothSpeed = 0.125f;
     [SerializeField] private Vector3 offset = new Vector3(0f, 0f, -10f);
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         //when the player dies, the camera should stop following
         if (target == null) return;

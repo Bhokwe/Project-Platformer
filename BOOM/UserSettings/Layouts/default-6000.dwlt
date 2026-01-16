@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 419.19995
     height: 716.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -693,7 +693,7 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 33492
+      - m_Data: 39874
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
@@ -1552,7 +1552,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Game/Prefabs
+    - Assets/_Game/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1562,26 +1562,26 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 62
   m_LastFolders:
-  - Assets/_Game/Prefabs
+  - Assets/_Game/Scripts
   m_LastFoldersGridSize: 62
   m_LastProjectPath: C:\Users\latit\Documents\Game Development\Semester 5\Project-Platformer\BOOM
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 43.600006}
+    scrollPos: {x: 0, y: 59.600006}
     m_SelectedIDs:
-    - m_Data: 49036
+    - m_Data: 49058
     m_LastClickedID:
-      m_Data: 49036
+      m_Data: 49058
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 48738
-    - m_Data: 48740
-    - m_Data: 48742
-    - m_Data: 48744
-    - m_Data: 48746
-    - m_Data: 48748
+    - m_Data: 48756
+    - m_Data: 48758
+    - m_Data: 48760
+    - m_Data: 48762
+    - m_Data: 48764
+    - m_Data: 48766
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1615,12 +1615,12 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 48738
-    - m_Data: 48740
-    - m_Data: 48742
-    - m_Data: 48744
-    - m_Data: 48746
-    - m_Data: 48748
+    - m_Data: 48756
+    - m_Data: 48758
+    - m_Data: 48760
+    - m_Data: 48762
+    - m_Data: 48764
+    - m_Data: 48766
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1648,8 +1648,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 33492
-    m_LastClickedInstanceID: 33492
+    - m_Data: 39874
+    m_LastClickedInstanceID: 39874
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -1764,7 +1764,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 540
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
